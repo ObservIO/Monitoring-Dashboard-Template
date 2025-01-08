@@ -1,0 +1,239 @@
+<!--
+    ObservIO Dashboard - Main Template
+    Author: [Your Name]
+    Version: 1.0.0
+    Last Updated: 2025-01-08
+    
+    Description:
+    Main dashboard template featuring a dark theme, responsive layout,
+    and modern UI components. Includes sidebar navigation, statistics cards,
+    and interactive charts.
+
+    Dependencies:
+    - Bootstrap 5.3.0
+    - Font Awesome 6.4.0
+    - ECharts 5.4.3
+-->
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObservIO Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container">
+                    <i class="fas fa-chart-line logo-icon"></i>
+                    <span class="brand-name">ObservIO</span>
+                </div>
+                <button class="btn-close-sidebar d-lg-none">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="sidebar-menu">
+                <div class="menu-section">
+                    <h6 class="menu-title">MAIN MENU</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link active">
+                                <i class="fas fa-home"></i>
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="analytics.html" class="nav-link">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Analytics</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="users.html" class="nav-link">
+                                <i class="fas fa-users"></i>
+                                <span>Users</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="menu-section">
+                    <h6 class="menu-title">MANAGEMENT</h6>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a href="settings.html" class="nav-link">
+                                <i class="fas fa-cog"></i>
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="fas fa-bell"></i>
+                                <span>Notifications</span>
+                                <span class="badge bg-danger rounded-pill ms-auto">5</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <img src="./assets/images/avatar.png" alt="User" class="avatar">
+                    <div class="user-details">
+                        <h6 class="user-name">John Doe</h6>
+                        <span class="user-role">Administrator</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Navbar -->
+            <nav class="navbar">
+                <button class="navbar-toggler" id="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(54, 162, 235, 0.2)">
+                            <i class="fas fa-users" style="color: #36A2EB"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>1,234</h3>
+                            <p>Total Users</p>
+                            <span class="trend positive">+12.5%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(255, 99, 132, 0.2)">
+                            <i class="fas fa-shopping-cart" style="color: #FF6384"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>$45,678</h3>
+                            <p>Revenue</p>
+                            <span class="trend positive">+8.3%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(75, 192, 192, 0.2)">
+                            <i class="fas fa-chart-line" style="color: #4BC0C0"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>867</h3>
+                            <p>Orders</p>
+                            <span class="trend negative">-2.4%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(255, 159, 64, 0.2)">
+                            <i class="fas fa-star" style="color: #FF9F40"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>4.8</h3>
+                            <p>Average Rating</p>
+                            <span class="trend positive">+0.2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="charts-grid">
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h5 class="card-title">Revenue Overview</h5>
+                            <div class="dropdown">
+                                <button class="btn btn-link text-secondary p-0" data-bs-toggle="dropdown">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="#">This Week</a></li>
+                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div id="revenueChart" style="height: 100%; width: 100%;"></div>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <div class="card-header">
+                            <h5 class="card-title">User Statistics</h5>
+                            <div class="dropdown">
+                                <button class="btn btn-link text-secondary p-0" data-bs-toggle="dropdown">
+                                    <i class="fas fa-ellipsis-v"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                    <li><a class="dropdown-item" href="#">This Week</a></li>
+                                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div id="usersChart" style="height: 100%; width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="activity-section">
+                    <div class="card-header">
+                        <h3>Recent Activity</h3>
+                        <button class="btn-primary">View All</button>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p>New user registered</p>
+                                <span>5 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-shopping-bag"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p>New order received</p>
+                                <span>15 minutes ago</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-comment"></i>
+                            </div>
+                            <div class="activity-details">
+                                <p>New comment on product</p>
+                                <span>30 minutes ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
